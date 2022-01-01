@@ -12,7 +12,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     /* Define the PHP version
      * https://github.com/rectorphp/rector#provide-php-version
      */
-    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_74);
+    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_81);
 
     $services = $containerConfigurator->services();
 

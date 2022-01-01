@@ -22,19 +22,19 @@ You can also clone this repository (see option 2). This is only required if you 
 
 ### Option 1 - Using Docker Hub
 
-1. Download the image by running `docker pull cavo789/runcode:1.1`,
-2. Then create a container by running `docker run --rm -p 88:80 -d --name runcode cavo789/runcode:1.1`,
+1. Download the image by running `docker pull cavo789/runcode:1.2`,
+2. Then create a container by running `docker run --rm -p 88:80 -d --name runcode cavo789/runcode:1.2`,
 3. Finally open a tab in your browser and surf to `http://127.0.0.1:88`.
 
 ### Option 2 - For development, clone the repository and use Docker too
 
 1. Make a git clone of this repo on your machine,
 2. Go inside the folder where you've downloaded the repository,
-3. Run `docker build --pull --rm -t cavo789/runcode:1.1 .`,
-4. Then run `docker run --rm -p 88:80 -d -v ${PWD}:/var/www/html --name runcode cavo789/runcode:1.1`,
+3. Run `docker build --pull --rm -t cavo789/runcode:1.2 .`,
+4. Then run `docker run --rm -p 88:80 -d -v ${PWD}:/var/www/html --name runcode cavo789/runcode:1.2`,
 5. From now, you can open the interface using `http://127.0.0.1:88`. If you want to change something, just update the code (like editing the `index.php` page) and refresh the interface to get the newer code.
 
-To update the image on Docker hub, just run something like `docker push cavo789/runcode:1.1`.
+To update the image on Docker hub, just run something like `docker push cavo789/runcode:1.2`.
 
 To run an interactive bash session: `docker exec -it runcode /bin/bash`
 

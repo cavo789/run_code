@@ -11,7 +11,7 @@
 # (Publish on Docker hub: `docker push cavo789/runcode:1.0`)
 
 # Desired target PHP version, See https://hub.docker.com/_/php for more
-ARG PHP_VERSION=7.4
+ARG PHP_VERSION=8.1
 
 FROM php:${PHP_VERSION}-apache
 
@@ -24,7 +24,7 @@ RUN set -e -x; \
     apt-get update -yqq; \
     apt-get install -y --no-install-recommends zip unzip; \
     apt-get install -y libicu-dev && docker-php-ext-configure intl && docker-php-ext-install intl; \
-    # apt-get install -y --no-install-recommends php7.4-intl; \
+    docker-php-ext-install intl ; \
     # cleanup the apt-get install cache and any tmp folder
     apt-get clean; \
     rm -rf /tmp/*; \
@@ -43,7 +43,7 @@ RUN set -e -x; \
     chmod +x /usr/local/bin/phpcs.phar /usr/local/bin/phpcbf.phar
 
 RUN set -e -x; \
-    chmod 0777 /tmp/ ; \
+    chmod -R 0777 /tmp/ ; \
     touch /tmp/runPhp_code.php ; \
     chmod 0777 /tmp/runPhp_code.php
 
